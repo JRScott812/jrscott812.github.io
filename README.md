@@ -4,15 +4,43 @@ Personal portfolio site built with [Jekyll](https://jekyllrb.com/) and hosted on
 
 ## Local development
 
-Requirements: Ruby (2.7+), Bundler.
+Requirements: Ruby (3.x), Bundler.
 
 ```bash
 gem install bundler
 bundle install
-bundle exec jekyll serve --livereload
 ```
 
-Then open http://127.0.0.1:4000 in your browser.
+### Preview the site (recommended)
+
+**Do not open files in `_site/` directly in your browser** — paths like `/assets/css/style.css` only work over HTTP.
+
+Use the local dev server instead:
+
+```bash
+bundle exec jekyll serve --livereload --config _config.yml,_config_dev.yml
+```
+
+On Windows you can double-click or run [`serve.bat`](serve.bat).
+
+Then open **http://127.0.0.1:4000** (not a `file://` path).
+
+`_config_dev.yml` sets `url` to `http://127.0.0.1:4000` so SEO/canonical tags match local preview. Production builds use the main `_config.yml` only.
+
+### Build without serving
+
+```bash
+bundle exec jekyll build
+```
+
+Output goes to `_site/`. To preview a build folder, serve it over HTTP:
+
+```bash
+cd _site
+python -m http.server 4000
+```
+
+Then open http://127.0.0.1:4000
 
 After the first `bundle install`, commit the generated `Gemfile.lock` for reproducible builds.
 
@@ -71,3 +99,16 @@ The sitemap is built automatically and includes all pages plus each project in `
 bundle exec jekyll build
 # open _site/sitemap.xml
 ```
+
+## Deployment
+
+The site deploys via [GitHub Actions](.github/workflows/pages.yml) using Node 24–compatible action versions (`checkout@v6`, `upload-pages-artifact@v5`, `deploy-pages@v5`).
+
+**One-time setup** (if you still use the legacy “Deploy from branch” builder):
+
+1. Push this repo to `main`
+2. Go to **Settings → Pages → Build and deployment**
+3. Set **Source** to **GitHub Actions**
+4. Select the **Deploy Jekyll site to Pages** workflow
+
+That replaces GitHub’s built-in `pages-build-deployment` workflow, which still uses Node 20 actions and triggers the deprecation warning.
