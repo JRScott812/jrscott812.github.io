@@ -1,10 +1,10 @@
 <header>
-	<nav>
+	<nav aria-label="Main navigation">
 		<ul>
-			<li><a href="{{ '/' | relative_url }}" title="Home">Home</a></li>
-			<li><a href="{{ '/gallery' | relative_url }}" title="Gallery">Gallery</a></li>
-			<li><a href="{{ '/projects' | relative_url }}" title="Projects">Projects</a></li>
-			<li><a href="{{ '/profiles' | relative_url }}" title="Profiles">Profiles</a></li>
+			<li><a href="{{ '/' | relative_url }}"{% if page.url == '/' %} class="active" aria-current="page"{% endif %}>Home</a></li>
+			<li><a href="{{ '/gallery/' | relative_url }}"{% if page.url == '/gallery/' %} class="active" aria-current="page"{% endif %}>Gallery</a></li>
+			<li><a href="{{ '/projects/' | relative_url }}"{% if page.url == '/projects/' or page.collection == 'projects' %} class="active" aria-current="page"{% endif %}>Projects</a></li>
+			<li><a href="{{ '/profiles/' | relative_url }}"{% if page.url == '/profiles/' %} class="active" aria-current="page"{% endif %}>Profiles</a></li>
 		</ul>
 	</nav>
 </header>

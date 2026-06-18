@@ -12,4 +12,4 @@ I'm a college student pursuing a BA in Computer Science -- Digital Media, with a
 
 ### About this site
 
-Here you can see what I'm working on.  Feel free to explore!
+Here you can see what I'm working on. Feel free to explore!

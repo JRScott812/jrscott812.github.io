@@ -1,9 +1,9 @@
 title: Jake Scott
-email: jrscott812@example.com
+email: jrscott812@outlook.com
 description: >
   Personal site and portfolio for Jake Scott — static site built with Jekyll.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site
+baseurl: ""
+url: "https://jrscott812.github.io"
 
 collections:
   projects:
@@ -17,4 +17,7 @@ defaults:
       layout: project
 
 markdown: kramdown
-theme: minima
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap

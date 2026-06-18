@@ -6,8 +6,5 @@ Allow: /
 Disallow: /admin/
 Disallow: /private/
 
-# Crawl delay (optional - in milliseconds)
-Crawl-delay: 1
-
 # Sitemap location
-Sitemap: https://jake-scott.com/sitemap.xml
+Sitemap: https://jrscott812.github.io/sitemap.xml

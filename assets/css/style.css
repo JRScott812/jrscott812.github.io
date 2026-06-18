@@ -126,6 +126,20 @@ html {
 	scroll-behavior: smooth;
 }
 
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+	}
+}
+
 body {
 	background: var(--bg-primary);
 	color: var(--text-primary);
@@ -193,6 +207,41 @@ a {
 	text-decoration: none;
 	transition: color var(--transition-fast);
 	font-weight: var(--font-weight-medium);
+}
+
+a:hover {
+	color: var(--accent-secondary);
+}
+
+main a:not(.btn):not(.profile-card) {
+	text-decoration: underline;
+	text-underline-offset: 2px;
+}
+
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible,
+nav a:focus-visible,
+.profile-card:focus-visible,
+.footer-links a:focus-visible {
+	outline: 2px solid var(--accent-primary);
+	outline-offset: 2px;
+}
+
+.skip-link {
+	position: absolute;
+	top: -100%;
+	left: var(--spacing-4);
+	z-index: calc(var(--z-fixed) + 1);
+	padding: var(--spacing-3) var(--spacing-4);
+	background: var(--accent-primary);
+	color: var(--primary-800);
+	font-weight: var(--font-weight-bold);
+	border-radius: var(--radius-md);
+}
+
+.skip-link:focus {
+	top: var(--spacing-4);
 }
 
 a:active {
@@ -305,6 +354,15 @@ nav a:hover::after {
 	transform-origin: left;
 }
 
+nav a.active {
+	color: var(--accent-primary);
+}
+
+nav a.active::after {
+	transform: scaleX(1);
+	transform-origin: left;
+}
+
 /* ==================================================
    BUTTONS
    ================================================== */
@@ -384,6 +442,7 @@ button:active {
 
 main {
 	padding: clamp(var(--spacing-6), 4vh, var(--spacing-12)) clamp(var(--spacing-4), 3vw, var(--spacing-6));
+	padding-bottom: calc(var(--footer-height) + clamp(var(--spacing-6), 4vh, var(--spacing-12)));
 	margin: 0 auto;
 	max-width: var(--max-width);
 	min-height: calc(100vh - var(--navbar-height));
@@ -467,6 +526,7 @@ main {
 
 .card-footer {
 	display: flex;
+	flex-wrap: wrap;
 	gap: var(--spacing-3);
 	padding-top: var(--spacing-4);
 	border-top: 1px solid var(--primary-600);
@@ -485,7 +545,6 @@ main {
 	height: 250px;
 	overflow: hidden;
 	border-radius: var(--radius-xl) var(--radius-xl) 0 0;
-	margin: -var(--spacing-6) -var(--spacing-6) var(--spacing-4) -var(--spacing-6);
 	background: var(--primary-600);
 }
 
@@ -494,6 +553,12 @@ main {
 	height: 100%;
 	object-fit: cover;
 	transition: transform var(--transition-base);
+}
+
+.project-image iframe {
+	width: 100%;
+	height: 100%;
+	border: 0;
 }
 
 .project-card:hover .project-image img {
@@ -507,6 +572,47 @@ main {
 
 .project-card .card-footer {
 	padding: var(--spacing-4) var(--spacing-6) var(--spacing-6) var(--spacing-6);
+}
+
+/* Project Detail Page */
+.project-detail {
+	overflow: hidden;
+	padding: 0;
+}
+
+.project-detail-body {
+	padding: var(--spacing-6);
+}
+
+.project-category {
+	font-size: var(--text-sm);
+	color: var(--accent-primary);
+	font-weight: var(--font-weight-semibold);
+	margin-bottom: var(--spacing-2);
+}
+
+.project-excerpt {
+	font-size: var(--text-lg);
+	color: var(--text-secondary);
+	margin-bottom: var(--spacing-6);
+}
+
+.project-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--spacing-3);
+	margin: var(--spacing-6) 0;
+}
+
+.project-body a {
+	text-decoration: underline;
+	text-underline-offset: 2px;
+}
+
+.project-tags {
+	color: var(--text-muted);
+	font-size: var(--text-sm);
+	margin-top: var(--spacing-4);
 }
 
 /* Profile Cards */
@@ -528,6 +634,7 @@ main {
 	border-color: var(--accent-primary);
 	box-shadow: var(--shadow-lg);
 	transform: translateY(-4px);
+	color: inherit;
 }
 
 .profile-icon {
@@ -566,7 +673,8 @@ footer {
 	left: 0;
 	right: 0;
 	height: var(--footer-height);
-	background: var(--bg-secondary);
+	background-color: rgba(13, 27, 42, 0.95);
+	backdrop-filter: blur(10px);
 	border-top: 1px solid var(--primary-600);
 	z-index: var(--z-fixed);
 	padding: var(--spacing-6);
@@ -584,11 +692,13 @@ footer {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	transition: transform var(--transition-fast);
+	color: var(--text-secondary);
+	transition: transform var(--transition-fast), color var(--transition-fast);
 }
 
 .footer-links a:hover {
 	transform: scale(1.15) translateY(-2px);
+	color: var(--accent-primary);
 }
 
 .footer-links img {
@@ -598,11 +708,42 @@ footer {
 }
 
 /* ==================================================
+   VIDEO EMBED
+   ================================================== */
+
+.video-wrapper {
+	position: relative;
+	width: 100%;
+	max-width: 800px;
+	aspect-ratio: 16 / 9;
+}
+
+.video-wrapper iframe {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	border: 0;
+}
+
+/* ==================================================
    SECTIONS & COMPONENTS
    ================================================== */
 
 section {
 	margin-bottom: clamp(var(--spacing-8), 6vh, var(--spacing-16));
+}
+
+.project-section h2 {
+	margin-top: var(--spacing-8);
+	margin-bottom: var(--spacing-6);
+	padding-bottom: var(--spacing-4);
+	border-bottom: 2px solid var(--accent-primary);
+	display: inline-block;
+}
+
+.project-section:first-of-type h2 {
+	margin-top: var(--spacing-4);
 }
 
 section h2 {
@@ -675,6 +816,7 @@ section h2 {
 
 	main {
 		padding: var(--spacing-8) var(--spacing-4);
+		padding-bottom: calc(var(--footer-height) + var(--spacing-8));
 		min-height: calc(100vh - var(--navbar-height-mobile));
 	}
 
@@ -712,6 +854,7 @@ section h2 {
 
 	main {
 		padding: var(--spacing-6) var(--spacing-3);
+		padding-bottom: calc(var(--footer-height) + var(--spacing-6));
 	}
 
 	h1 {
@@ -752,9 +895,9 @@ section h2 {
 	padding: 0;
 	margin: -1px;
 	overflow: hidden;
-	clip: rect(0, 0, 0, 0);
+	clip-path: inset(50%);
 	white-space: nowrap;
-	border-width: 0;
+	border: 0;
 }
 
 .mt-1 {
