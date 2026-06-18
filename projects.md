@@ -39,39 +39,9 @@ permalink: /projects/
 
 ## Mobile Apps
 
-<div class="grid grid-2">
-	<div class="card project-card">
-		<div class="project-image">
-			<img src="https://via.placeholder.com/400x250?text=Project+Preview" alt="Another Project preview">
-		</div>
-		<div class="card-body">
-			<h3 class="card-title">Another Project</h3>
-			<p>Brief overview of this project.</p>
-		</div>
-		<div class="card-footer">
-			<a href="#" class="btn btn-primary">GitHub</a>
-			<a href="#" class="btn btn-secondary">Store</a>
-		</div>
-	</div>
-</div>
 
 ## Desktop Apps
 
-<div class="grid grid-2">
-	<div class="card project-card">
-		<div class="project-image">
-			<img src="https://via.placeholder.com/400x250?text=Project+Preview" alt="Desktop Project preview">
-		</div>
-		<div class="card-body">
-			<h3 class="card-title">Desktop Project</h3>
-			<p>Description here.</p>
-		</div>
-		<div class="card-footer">
-			<a href="#" class="btn btn-primary">GitHub</a>
-			<a href="#" class="btn btn-secondary">Store</a>
-		</div>
-	</div>
-</div>
 
 ## Websites/Web Apps
 
@@ -104,18 +74,20 @@ permalink: /projects/
 
 ## Games
 
+
+## Misc
+
 <div class="grid grid-2">
 	<div class="card project-card">
 		<div class="project-image">
-			<img src="https://via.placeholder.com/400x250?text=Project+Preview" alt="Another Project preview">
+			<iframe src="https://1drv.ms/w/c/5360ff81f8aff1ad/IQRk_DZASV68SKjQKSfFRZFgAUJpQne29-twmqGPUKDrTGU" width="476" height="288" frameborder="0" scrolling="no"></iframe>
 		</div>
 		<div class="card-body">
-			<h3 class="card-title">Another Project</h3>
-			<p>Brief overview of this project.</p>
+			<h3 class="card-title">Emoji Proposal Template</h3>
+			<p>A word document template for submitting <a href="https://unicode.org/emoji/proposals.html">proposals</a> to the <a href="https://home.unicode.org/emoji/about-emoji/">Unicode Consortium</a></p>
 		</div>
 		<div class="card-footer">
-			<a href="#" class="btn btn-primary">GitHub</a>
-			<a href="#" class="btn btn-secondary">Store</a>
+			<a href="https://1drv.ms/w/c/5360ff81f8aff1ad/IQBk_DZASV68SKjQKSfFRZFgAV5jkqtL81XQlyht2hJW3iI?e=KMekoq" class="btn btn-primary">Link to download template</a>
 		</div>
 	</div>
 </div>

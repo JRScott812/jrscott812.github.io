@@ -14,5 +14,3 @@ permalink: /gallery/
 			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 			allowfullscreen></iframe>
 </div>
-
-Placeholder gallery page for other renders and animations. Add image assets to `assets/images/` and reference them here.
