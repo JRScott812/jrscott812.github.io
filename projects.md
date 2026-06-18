@@ -55,7 +55,7 @@ permalink: /projects/
 			<p><em>LetterBoxd</em> for root beer.  Log your drinks and favorite flavors.</p>
 		</div>
 		<div class="card-footer">
-			<a href="https://rootbeerbottled.com/" class="btn btn-secondary">https://rootbeerbottled.com/</a>
+			<a href="https://rootbeerbottled.com/" class="btn btn-primary">https://rootbeerbottled.com/</a>
 		</div>
 	</div>
 	<div class="card project-card">
@@ -67,7 +67,7 @@ permalink: /projects/
 			<p>A website made for Miriam's Hope in Thailand.  An organization that works to get women out of sex work.</p>
 		</div>
 		<div class="card-footer">
-			<a href="https://www.miriams-hope.com/" class="btn btn-secondary">https://www.miriams-hope.com/</a>
+			<a href="https://www.miriams-hope.com/" class="btn btn-primary">https://www.miriams-hope.com/</a>
 		</div>
 	</div>
 </div>
@@ -80,7 +80,7 @@ permalink: /projects/
 <div class="grid grid-2">
 	<div class="card project-card">
 		<div class="project-image">
-			<iframe src="https://1drv.ms/w/c/5360ff81f8aff1ad/IQRk_DZASV68SKjQKSfFRZFgAUJpQne29-twmqGPUKDrTGU" width="476" height="288" frameborder="0" scrolling="no"></iframe>
+			<iframe src="https://1drv.ms/w/c/5360ff81f8aff1ad/IQRk_DZASV68SKjQKSfFRZFgAUJpQne29-twmqGPUKDrTGU" width="auto" height="auto" frameborder="0" scrolling="no"></iframe>
 		</div>
 		<div class="card-body">
 			<h3 class="card-title">Emoji Proposal Template</h3>

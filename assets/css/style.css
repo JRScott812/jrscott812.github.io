@@ -195,10 +195,6 @@ a {
 	font-weight: var(--font-weight-medium);
 }
 
-a:hover {
-	color: var(--accent-secondary);
-}
-
 a:active {
 	opacity: 0.8;
 }
