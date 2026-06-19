@@ -9,5 +9,3 @@ links:
     style: primary
 published: true
 ---
-
-*LetterBoxd* for root beer — log your drinks and favorite flavors.

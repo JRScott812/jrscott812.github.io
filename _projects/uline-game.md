@@ -12,5 +12,3 @@ links:
     style: secondary
 published: true
 ---
-
-A browser extension game built around guessing ULINE product prices.

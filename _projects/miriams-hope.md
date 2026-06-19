@@ -9,5 +9,3 @@ links:
     style: primary
 published: true
 ---
-
-A website made for Miriam's Hope in Thailand — an organization that works to get women out of sex work.

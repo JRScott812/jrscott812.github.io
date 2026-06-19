@@ -12,5 +12,3 @@ links:
     style: secondary
 published: true
 ---
-
-A Chrome extension that injects random FBI warning jumpscares into browsing sessions.
