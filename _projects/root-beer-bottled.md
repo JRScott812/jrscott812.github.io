@@ -1,6 +1,6 @@
 ---
 title: Root Beer Bottled
-category: Websites/Web Apps
+category: Web
 image: https://rootbeerbottled.com/favicon.ico
 excerpt: LetterBoxd for root beer. Log your drinks and favorite flavors.
 links:

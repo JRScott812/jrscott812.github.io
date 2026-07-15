@@ -1,6 +1,6 @@
 ---
 title: Kings Island Warehouse Lookup
-category: Websites/Web Apps
+category: Web
 image: https://jrscott812.github.io/Warehouse-Lookup/King's%20Island%20Logo.svg
 excerpt: A tool to easily lookup prize information for their SKU.
 links:

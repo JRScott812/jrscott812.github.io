@@ -1,6 +1,6 @@
 ---
 title: Foundation Event
-category: Websites/Web Apps
+category: Web
 image: https://foundationevent.com/Assets/Foundation/Foundation%20Logo.svg
 excerpt: A website for events in my college dorm.
 links:
