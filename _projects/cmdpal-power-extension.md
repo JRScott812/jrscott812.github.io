@@ -1,7 +1,7 @@
 ---
 title: Command Palette Power Extension
 category: Apps
-image: assets\images\CmdPal.Ext.Power.svg
+image: ![Command Palette Power Extension](/assets/images/CmdPal.Ext.Power.svg)
 excerpt: An extension for the PowerToys Command Palette that allows you to manage power modes & plans.
 links:
   - label: Microsoft Store
