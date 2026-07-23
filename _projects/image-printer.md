@@ -1,7 +1,7 @@
 ---
 title: Image Printer
 category: Apps
-image: https://store-images.s-microsoft.com/image/apps.30749.13938053492270737.07b673f5-e9fa-4417-b7ac-d5ab27ac89e2.2bbe1053-7530-437f-b1b4-f413eb120b4a
+image: https://store-images.s-microsoft.com/image/apps.33842.13938053492270737.640792ed-af1f-4242-844f-3f4e40e9e005.edb58e04-7daf-4f84-8efa-fa80389ac755
 excerpt: A tool that allows you to convert images and videos to ASCII art.
 links:
   - label: Store
