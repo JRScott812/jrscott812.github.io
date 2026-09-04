@@ -25,6 +25,11 @@ jobs:
         id: pages
         uses: actions/configure-pages@v5
 
+      - name: Generate project pages from GitHub repositories
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 scripts/generate_projects.py
+
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
 

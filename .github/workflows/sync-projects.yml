@@ -1,0 +1,42 @@
+name: Sync GitHub projects
+
+on:
+  schedule:
+    - cron: "17 3 * * *"
+  workflow_dispatch:
+
+permissions:
+  actions: write
+  contents: write
+  pages: read
+
+concurrency:
+  group: sync-projects
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Generate project pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 scripts/generate_projects.py
+
+      - name: Commit generated project pages
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add _projects/generated
+          if git diff --cached --quiet; then
+            echo "No project changes to commit."
+            exit 0
+          fi
+          git commit -m "chore: sync GitHub projects"
+          git push
+          gh workflow run pages.yml --ref main
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

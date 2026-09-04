@@ -86,6 +86,18 @@ Optional longer description for the project detail page.
 
 Projects appear grouped by `category` on `/projects/`. Each file also gets a detail page at `/projects/<filename>/`.
 
+### Automatic GitHub projects
+
+The Pages workflow also scans the public repositories owned by `JRScott812` and generates project pages before Jekyll builds the site. Only repositories with GitHub Pages enabled are included. Forked repositories, archived repositories, and this portfolio repository are skipped. A generated page is not created when a matching hand-authored file already exists in `_projects/`, so hand-authored entries take precedence.
+
+Generated files are stored in `_projects/generated/` and committed by the automatic sync workflow. Run the same step locally with:
+
+```bash
+python3 scripts/generate_projects.py
+```
+
+Set `GITHUB_REPOSITORY_OWNER` to scan another GitHub account. Repository descriptions become excerpts, generated pages use GitHub's Open Graph social preview image, and each page links to GitHub plus its configured homepage when one exists. The workflow runs daily and can also be started manually from the Actions tab.
+
 ## Site configuration
 
 - Production URL: `https://jrscott812.github.io` (set in `_config.yml`)
